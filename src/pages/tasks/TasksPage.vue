@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <h1>Teste</h1>
+    <h1>Manage Tasks Page</h1>
   </q-page>
 </template>
 

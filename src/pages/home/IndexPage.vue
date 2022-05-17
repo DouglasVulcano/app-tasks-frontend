@@ -1,5 +1,8 @@
 <template>
   <q-page class="flex flex-center">
+    <h1>Home Page</h1>
+  </q-page>
+  <q-page class="flex flex-center">
     <q-table title="Users" :rows="users" :columns="columns" row-key="id" />
   </q-page>
 </template>
