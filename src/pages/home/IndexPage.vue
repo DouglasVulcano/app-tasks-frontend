@@ -10,6 +10,8 @@
 <script>
 import { defineComponent, ref, onMounted } from "vue";
 import { api } from "boot/axios";
+import { createNamespacedHelpers } from "vuex-composition-helpers";
+const { useGetters, useActions } = createNamespacedHelpers("home");
 
 export default defineComponent({
   name: "IndexPage",
@@ -34,6 +36,16 @@ export default defineComponent({
         field: "email",
       },
     ];
+
+    const { users2 } = useGetters({
+      users2: "getUsers",
+    });
+
+    console.log(`Olá ${users2}`);
+
+    const { fetchUsers } = useActions(["fetchUsers"]);
+
+    fetchUsers().finally();
 
     const getUsers = async () => {
       await api.get("user").then((response) => {
