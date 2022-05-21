@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh Lpr lFf" class="bg-blue-grey-3">
+    <q-header elevated class="bg-blue-8">
       <q-toolbar>
         <q-btn
           flat
@@ -11,7 +11,9 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> {{ $t("main_layout.title") }} </q-toolbar-title>
+        <q-toolbar-title>
+          {{ $t("main_layout.title") }}
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
 

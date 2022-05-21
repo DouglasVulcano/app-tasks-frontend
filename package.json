@@ -2,7 +2,7 @@
   "name": "quasar-project",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "MyTasks",
+  "productName": "CyndaTasks",
   "author": "DouglasVulcano <vulcanodouglas1708@gmail.com>",
   "private": true,
   "scripts": {

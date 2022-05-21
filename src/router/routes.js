@@ -1,19 +1,11 @@
-const routes = [
-  {
-    path: "/",
-    component: () => import("layouts/MainLayout.vue"),
-    children: [
-      { path: "", component: () => import("pages/home/IndexPage.vue") },
-    ],
-  },
+import { routes as auth } from "../pages/auth/index";
+import { routes as home } from "../pages/home/index";
+import { routes as tasks } from "../pages/tasks/index";
 
-  {
-    path: "/tasks",
-    component: () => import("layouts/MainLayout.vue"),
-    children: [
-      { path: "", component: () => import("pages/tasks/TasksPage.vue") },
-    ],
-  },
+export default [
+  ...auth,
+  ...home,
+  ...tasks,
 
   // Always leave this as last one,
   // but you can also remove it
@@ -22,5 +14,3 @@ const routes = [
     component: () => import("pages/404/ErrorNotFound.vue"),
   },
 ];
-
-export default routes;

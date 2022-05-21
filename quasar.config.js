@@ -46,7 +46,7 @@ module.exports = configure(function (ctx) {
       vueRouterMode: "history", // available values: 'hash', 'history'
       env: {
         API_URL: ctx.dev
-          ? "http://127.0.0.1:8000/api/"
+          ? "https://backend-mytasks-app.herokuapp.com/api" //"http://127.0.0.1:8000/api/"
           : "https://prod.api.com",
       },
       // transpile: false,

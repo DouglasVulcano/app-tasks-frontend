@@ -1,30 +1,22 @@
 <template>
-  <q-page class="flex flex-center">
-    <h1>Home Page</h1>
-    <p>{{ all_users }}</p>
+  <q-page>
+    <page-title-component :title="$t('main_layout.home_page_title')" />
   </q-page>
 </template>
 
 <script>
-import { defineComponent, onMounted } from "vue";
-import { createNamespacedHelpers } from "vuex-composition-helpers";
-const { useGetters, useActions } = createNamespacedHelpers("home");
+import { defineComponent } from "vue";
+//import { createNamespacedHelpers } from "vuex-composition-helpers";
+//const { useGetters, useActions } = createNamespacedHelpers("home");
+import PageTitleComponent from "../components/PageTitleComponent.vue";
 
 export default defineComponent({
   name: "IndexPage",
-
+  components: {
+    PageTitleComponent,
+  },
   setup() {
-    const { fetchUsers } = useActions(["fetchUsers"]);
-
-    const { all_users } = useGetters({
-      all_users: "getUsers",
-    });
-
-    fetchUsers();
-
-    return {
-      all_users,
-    };
+    return {};
   },
 });
 </script>

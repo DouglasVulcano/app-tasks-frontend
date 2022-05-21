@@ -1,4 +1,5 @@
 export default {
-  title: "MyTasks",
+  title: "CyndaTasks",
   menu_title: "Menu",
+  home_page_title: "Home Page",
 };
