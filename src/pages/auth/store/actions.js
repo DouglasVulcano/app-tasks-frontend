@@ -1,5 +1,7 @@
 import * as types from "./mutation-types";
 import { api } from "../../../boot/axios";
+import route from "../../../router/index";
+import { showNotifyLoginFail } from "../../../helpers/notificationsHelper";
 
 /**
  * @param commit
@@ -10,16 +12,24 @@ export const setUserData = ({ commit }, payload) => {
 };
 
 /**
+ * log out action
+ */
+export const logOut = () => {
+  localStorage.removeItem("user_token");
+  route.push("/login");
+};
+
+/**
  * @param dispatch
  * @param payload
- * @return {*}
  */
 export const fetchUserData = async ({ dispatch }, payload) => {
   await api
     .post("/login", payload)
     .then((res) => {
-      console.log(res.data);
+      localStorage.setItem("user_token", res.data.token);
       dispatch("setUserData", res.data);
+      route.push("/");
     })
-    .catch((err) => console.log(err));
+    .catch(() => showNotifyLoginFail());
 };

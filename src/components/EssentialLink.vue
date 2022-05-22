@@ -3,7 +3,6 @@
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
-
     <q-item-section>
       <q-item-label>{{ title }}</q-item-label>
     </q-item-section>
@@ -22,11 +21,11 @@ export default defineComponent({
     },
     link: {
       type: String,
-      default: "",
+      required: true,
     },
     icon: {
       type: String,
-      default: "",
+      required: true,
     },
   },
 });

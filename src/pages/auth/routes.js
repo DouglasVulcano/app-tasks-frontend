@@ -4,7 +4,7 @@ export default [
     component: () => import("../../layouts/AuthLayout"),
     children: [
       {
-        path: "",
+        path: "/login",
         component: () => import("pages/auth/LoginPage.vue"),
         name: "login",
       },
@@ -15,7 +15,7 @@ export default [
     component: () => import("../../layouts/AuthLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/register",
         component: () => import("pages/auth/RegisterPage.vue"),
         name: "register",
       },

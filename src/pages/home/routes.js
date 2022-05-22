@@ -4,9 +4,9 @@ export default [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/",
         component: () => import("pages/home/IndexPage.vue"),
-        name: "home",
+        name: "/",
       },
     ],
   },

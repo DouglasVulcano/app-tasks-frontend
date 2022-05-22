@@ -6,7 +6,7 @@ const menus = [
     link: "/",
   },
   {
-    title: "Manage Tasks",
+    title: "Gerenciar Tasks",
     icon: "list",
     link: "/tasks",
   },

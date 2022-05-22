@@ -3,6 +3,10 @@
     <div class="row">
       <div class="col-12 col-md-3 q-mx-auto absolute-center">
         <div class="bg-white shadow-4 rounded-borders q-pa-lg">
+          <h5 class="text-center">
+            {{ $t("auth.login_title") }}
+          </h5>
+
           <q-form @submit.prevent="onSubmit()">
             <q-input
               outlined
