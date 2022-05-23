@@ -2,6 +2,7 @@ import * as types from "./mutation-types";
 import { api } from "../../../boot/axios";
 import route from "../../../router/index";
 import { showNotifyLoginFail } from "../../../helpers/notificationsHelper";
+import { getAuthenticationToken } from "../../../helpers/authenticationToken";
 
 /**
  * @param commit
@@ -23,13 +24,25 @@ export const logOut = () => {
  * @param dispatch
  * @param payload
  */
-export const fetchUserData = async ({ dispatch }, payload) => {
+export const fetchUserData = async ({}, payload) => {
   await api
     .post("/login", payload)
     .then((res) => {
       localStorage.setItem("user_token", res.data.token);
-      dispatch("setUserData", res.data);
       route.push("/");
+    })
+    .catch(() => showNotifyLoginFail());
+};
+
+/**
+ * @param dispatch
+ * @param payload
+ */
+export const fetchUserMe = async ({ dispatch }) => {
+  await api
+    .get("/me", getAuthenticationToken())
+    .then((res) => {
+      dispatch("setUserData", res.data);
     })
     .catch(() => showNotifyLoginFail());
 };

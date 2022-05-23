@@ -1,3 +1,3 @@
 export default {
-  title: "CyndaTasks",
+  welcome: "Olá {name}",
 };

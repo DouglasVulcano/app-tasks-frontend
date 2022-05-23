@@ -1,19 +1,22 @@
 <template>
-  <q-page>
-    <page-title-component :title="$t('main_layout.home_page_title')" />
+  <q-page class="q-ma-lg">
+    <page-title-component2 :title="$t('main_layout.home_page_title')" />
+    <div class="">
+      <widget-component />
+    </div>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-//import { createNamespacedHelpers } from "vuex-composition-helpers";
-//const { useGetters, useActions } = createNamespacedHelpers("home");
-import PageTitleComponent from "../components/PageTitleComponent.vue";
+import PageTitleComponent2 from "../components/PageTitleComponent2.vue";
+import WidgetComponent from "./components/WidgetComponent.vue";
 
 export default defineComponent({
   name: "IndexPage",
   components: {
-    PageTitleComponent,
+    PageTitleComponent2,
+    WidgetComponent,
   },
   setup() {
     return {};

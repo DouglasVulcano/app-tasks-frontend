@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white q-ma-lg padding-title rounded-borders shadow-4">
+  <div class="bg-white padding-title q-mb-lg rounded-borders shadow-4">
     <h5 class="text-wigth-light text-uppercase text-grey-8 q-ma-sm q-pa-md">
       {{ title }}
     </h5>
