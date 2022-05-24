@@ -1,5 +1,5 @@
 <template>
-  <div class="q-mb-lg">
+  <div class="q-mb-lg q-mt-lg">
     <h5 class="text-wigth-light text-uppercase text-grey-8 q-ma-sm q-pa-sm">
       {{ $t("homepage.welcome", { name: user_data.name }) }}
     </h5>

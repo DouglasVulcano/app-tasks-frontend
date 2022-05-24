@@ -1,23 +1,24 @@
 import * as types from "./mutation-types";
 import { api } from "../../../boot/axios";
+import { getAuthenticationToken } from "../../../helpers/authenticationToken";
 
 /**
  * @param commit
  * @param payload
  */
-export const setUsers = ({ commit }, payload) => {
-  commit(types.SET_USERS, payload);
+export const setLastTask = ({ commit }, payload) => {
+  commit(types.SET_LAST_TASK, payload);
 };
 
 /**
  * @param dispatch
  * @return {*}
  */
-export const fetchUsers = async ({ dispatch }) => {
+export const fetchLastTask = async ({ dispatch }) => {
   await api
-    .get("/user")
+    .get("/tasks/last-task", getAuthenticationToken())
     .then((res) => {
-      dispatch("setUsers", res.data);
+      dispatch("setLastTask", res.data);
     })
     .catch((err) => console.log(err));
 };

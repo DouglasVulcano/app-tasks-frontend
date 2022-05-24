@@ -1,3 +1,8 @@
-export const getUsers = (state) => {
-  return state.users;
+/**
+ * getter to last task
+ * @param {*} state
+ * @returns
+ */
+export const getLastTask = (state) => {
+  return state.last_task;
 };
