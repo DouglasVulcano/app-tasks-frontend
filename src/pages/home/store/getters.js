@@ -3,6 +3,4 @@
  * @param {*} state
  * @returns
  */
-export const getLastTask = (state) => {
-  return state.last_task;
-};
+export const getLastTask = (state) => state.last_task;

@@ -1,19 +1,34 @@
 <template>
-  <div class="q-pa-md q-mt-sm bg-white item-style">
+  <div
+    class="q-pa-md q-mt-sm bg-white item-style"
+    @click="showTaskModal = true"
+  >
     <div class="q-pa-sm text-uppercase">{{ task.title }}</div>
   </div>
+  <task-modal-component v-model="showTaskModal" :task="task" />
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import TaskModalComponent from "./TaskModalComponent.vue";
 
 export default defineComponent({
   name: "TaskItemComponent",
+  components: {
+    TaskModalComponent,
+  },
   props: {
     task: {
       type: Object,
       required: true,
     },
+  },
+  setup() {
+    const showTaskModal = ref(false);
+
+    return {
+      showTaskModal,
+    };
   },
 });
 </script>

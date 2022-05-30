@@ -3,21 +3,21 @@
     <div class="col-12 col-md q-pr-sm q-pl-sm q-mb-sm">
       <q-card>
         <q-card-actions align="left">
-          <p>Value</p>
+          <p>{{ total_tasks }}</p>
         </q-card-actions>
       </q-card>
     </div>
     <div class="col-12 col-md q-pr-sm q-pl-sm q-mb-sm">
       <q-card>
         <q-card-actions align="left">
-          <p>Value</p>
+          <p>{{ total_opened }}</p>
         </q-card-actions>
       </q-card>
     </div>
     <div class="col-12 col-md q-pr-sm q-pl-sm q-mb-sm">
       <q-card>
         <q-card-actions align="left">
-          <p>Value</p>
+          <p>{{ total_done }}</p>
         </q-card-actions>
       </q-card>
     </div>
@@ -29,7 +29,17 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "WidgetComponent",
-  components: {},
+  props: {
+    total_tasks: {
+      required: true,
+    },
+    total_opened: {
+      required: true,
+    },
+    total_done: {
+      required: true,
+    },
+  },
   setup() {
     return {};
   },

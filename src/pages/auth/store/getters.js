@@ -1,3 +1,1 @@
-export const getUserData = (state) => {
-  return state.user_data || [];
-};
+export const getUserData = (state) => state.user_data || [];

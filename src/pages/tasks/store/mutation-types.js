@@ -1,1 +1,2 @@
 export const SET_USER_TASKS = "TASKS/SET_USER_TASKS";
+export const SET_LAST_TASK = "TASKS/SET_LAST_TASK";

@@ -1,8 +1,8 @@
 <template>
   <div class="q-ma-sm">
     <q-card>
-      <q-card-section class="bg-primary text-white">
-        <div class="text-h6 text-uppercase">
+      <q-card-section class="bg-grey-4 text-white">
+        <div class="text-h6 text-uppercase text-grey-7">
           <q-icon name="list_alt" style="font-size: 1.5em" />
           {{ $t("homepage.last_task") }}
         </div>
@@ -42,11 +42,11 @@
           </q-card-section>
         </div>
       </div>
-      <q-card-actions align="right">
+      <div align="right">
         <q-btn flat class="text-blue" :to="{ name: 'tasks' }"
           >Visualizar tasks</q-btn
         >
-      </q-card-actions>
+      </div>
     </q-card>
   </div>
 </template>
