@@ -34,3 +34,26 @@ export const getTotalDoneTasks = (state) =>
  */
 export const getTotalOpenedTasks = (state) =>
   state.user_tasks.filter((element) => element.done == 0).length;
+
+/**
+ * data to generate widget
+ * @param {*} state
+ * @returns
+ */
+export const getDataToWidget = (state) => [
+  {
+    title: "homepage.total",
+    icon: "expand_less",
+    value: state.user_tasks.length,
+  },
+  {
+    title: "homepage.opened",
+    icon: "lock_open",
+    value: state.user_tasks.filter((element) => element.done == 0).length,
+  },
+  {
+    title: "homepage.done",
+    icon: "lock",
+    value: state.user_tasks.filter((element) => element.done == 1).length,
+  },
+];

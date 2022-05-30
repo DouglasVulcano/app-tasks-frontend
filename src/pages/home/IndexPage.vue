@@ -1,11 +1,7 @@
 <template>
   <q-page class="q-pb-lg">
     <page-title-component2 :title="$t('main_layout.home_page_title')" />
-    <widget-component
-      :total_tasks="total_tasks"
-      :total_opened="total_opened"
-      :total_done="total_done"
-    />
+    <widget-component :data="widget_data" />
     <last-task-component :last_task="last_task" />
   </q-page>
 </template>
@@ -30,11 +26,10 @@ export default defineComponent({
         "fetchUserTasks",
         "fetchLastTask",
       ]),
-      { last_task, total_tasks, total_opened, total_done } = useGetters({
+      { last_task, widget_data } = useGetters({
         last_task: "getLastTask",
-        total_tasks: "getTotalTasks",
-        total_opened: "getTotalOpenedTasks",
-        total_done: "getTotalDoneTasks",
+
+        widget_data: "getDataToWidget",
       });
 
     onMounted(() => {
@@ -44,9 +39,7 @@ export default defineComponent({
 
     return {
       last_task,
-      total_tasks,
-      total_opened,
-      total_done,
+      widget_data,
     };
   },
 });

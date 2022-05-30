@@ -1,8 +1,14 @@
 <template>
   <div class="q-mb-lg q-mt-lg">
-    <h5 class="text-wigth-light text-uppercase text-grey-8 q-ma-sm q-pa-sm">
-      {{ $t("homepage.welcome", { name: user_data.name }) }}
-    </h5>
+    <h5
+      class="text-wigth-light text-grey-8 q-ma-sm q-pa-sm"
+      v-html="
+        $t('homepage.welcome', {
+          greeting: greetingMessage(),
+          name: user_data.name,
+        })
+      "
+    ></h5>
     <span class="text-wigth-light text-uppercase text-grey-8 q-ma-sm q-pa-sm">{{
       getDate()
     }}</span>
@@ -12,8 +18,8 @@
 <script>
 import { defineComponent, onMounted } from "vue";
 import { createNamespacedHelpers } from "vuex-composition-helpers";
+import { greetingMessage, getDate } from "../../helpers/numberManipulations";
 const { useGetters, useActions } = createNamespacedHelpers("auth");
-import moment from "moment";
 
 export default defineComponent({
   name: "PageTitleComponent2",
@@ -29,7 +35,6 @@ export default defineComponent({
       }),
       { fetchUserMe } = useActions(["fetchUserMe"]);
 
-    const getDate = () => moment(new Date()).format("DD/MM/YYYY HH:mm:ss");
     onMounted(() => {
       fetchUserMe();
     });
@@ -37,6 +42,7 @@ export default defineComponent({
     return {
       user_data,
       getDate,
+      greetingMessage,
     };
   },
 });
